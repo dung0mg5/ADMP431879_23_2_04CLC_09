@@ -13,6 +13,10 @@ import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import SearchScreen from './screens/SearchScreen';
+import PlacesScreen from './screens/PlacesScreen';
+import MapScreen from './screens/MapScreen';
+import PropertyInfoScreen from './screens/PropertyInfoScreen';
 
 
 const StackNavigator = () => {
@@ -69,6 +73,10 @@ const StackNavigator = () => {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Main" component={BottomTabs} options={{ headerShown: false, headerTitleAlign: 'center' }} />
+                <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="Places" component={PlacesScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="Map" component={MapScreen} />
+                <Stack.Screen name="Info" component={PropertyInfoScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )

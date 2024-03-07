@@ -12,7 +12,7 @@ import {
 import React, { useLayoutEffect, useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
-import Header from '../Components/Header';
+import Header from '../components/Header';
 
 import { Feather } from '@expo/vector-icons';
 
@@ -32,6 +32,7 @@ import { ModalContent } from "react-native-modals";
 
 const HomeScreen = () => {
     const navigation = useNavigation();
+    const [selectedDates, setSelectedDates] = useState();
     const route = useRoute();
     const [rooms, setRooms] = useState(1);
     const [adults, setAdults] = useState(2);
@@ -70,6 +71,33 @@ const HomeScreen = () => {
                 title="Submit"
             />
         );
+    };
+    const searchPlaces = (place) => {
+        if (!route.params || !selectedDates) {
+            Alert.alert(
+                "Thiếu thông tin chi tiết",
+                "Vui lòng điền đầy đủ thông tin",
+                [
+                    {
+                        text: "Cancel",
+                        onPress: () => console.log("Cancel Pressed"),
+                        style: "cancel"
+                    },
+                    { text: "OK", onPress: () => console.log("OK Pressed") }
+                ],
+                { cancelable: false }
+            );
+        }
+
+        if (route.params && selectedDates) {
+            navigation.navigate("Places", {
+                rooms: rooms,
+                adults: adults,
+                children: children,
+                selectedDates: selectedDates,
+                place: place
+            })
+        }
     };
     // console.log(route.params);
 
