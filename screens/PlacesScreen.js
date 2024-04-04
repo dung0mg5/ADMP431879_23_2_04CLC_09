@@ -479,7 +479,7 @@ const PlacesScreen = () => {
     ];
     const navigation = useNavigation();
     const [modalVisibile, setModalVisibile] = useState(false);
-    const [selectedFilter, setSelectedFilter] = useState([]);
+    const [selectedFilter, setSelectedFilter] = useState([false]);
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: true,

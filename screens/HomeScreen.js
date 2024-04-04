@@ -170,13 +170,19 @@ const HomeScreen = () => {
                         <Feather name="calendar" size={24} color="black" />
                         <DatePicker
                             style={{
-                                width: 350,
+                                width: 300,
                                 height: 30,
                                 borderRadius: 0,
                                 borderWidth: 0,
                                 borderColor: "transparent",
                             }}
+                            markText={"CHỌN THỜI GIAN"}
                             customStyles={{
+                                headerMarkTitle:{
+                                    color: "#fff",
+                                    fontSize: 15,
+                                    
+                                },
                                 placeholderText: {
                                     fontSize: 15,
                                     flexDirection: "row",
@@ -184,7 +190,11 @@ const HomeScreen = () => {
                                     marginRight: "auto",
                                 },
                                 headerStyle: {
-                                    backgroundColor: "#003580",
+                                    backgroundColor: "#2D6ADC",
+                                    // backgroundLinearGradient: [ // Add linear gradient
+                                    //     { colors: ['#00FF94', '#2D6ADC'] }, // Replace with your desired colors
+                                    //     { start: { x: 0, y: 0 }, end: { x: 1, y: 0 } }, // Horizontal gradient
+                                    // ],
                                 },
                                 contentText: {
                                     fontSize: 15,
@@ -193,6 +203,7 @@ const HomeScreen = () => {
                                     marginRight: "auto",
                                 },
                             }}
+                            blockBefore={true}
                             selectedBgColor="#0047AB"
                             customButton={(onConfirm) => customButton(onConfirm)}
                             onConfirm={(startDate, endDate) =>

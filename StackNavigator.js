@@ -77,6 +77,8 @@ const StackNavigator = () => {
                 <Stack.Screen name="Places" component={PlacesScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="Map" component={MapScreen} />
                 <Stack.Screen name="Info" component={PropertyInfoScreen} />
+                <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="Saved" component={SavedScreen} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     )

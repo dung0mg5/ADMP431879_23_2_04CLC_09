@@ -485,7 +485,7 @@ const SearchScreen = () => {
     }, [items]);
     console.log(items);
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ paddingTop: 30 }}>
             <View
                 style={{
                     padding: 10,
